@@ -3,22 +3,57 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { pages } from '@/lib/site';
+import FadeInSection from '@/components/animation/FadeInSection';
 
 export default function ContactPage() {
   const { contact } = pages;
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
 
-    // フォーム送信処理（実際の運用時はAPIエンドポイントに送信）
-    // 例: await fetch('/api/contact', { method: 'POST', body: formData });
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      company: formData.get('company') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      inquiryType: formData.get('inquiryType') as string,
+      budget: formData.get('budget') as string,
+      timeline: formData.get('timeline') as string,
+      message: formData.get('message') as string,
+      privacy: formData.get('privacy') === 'on',
+    };
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || '送信に失敗しました');
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : '送信中にエラーが発生しました。時間をおいて再度お試しください。'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // 送信完了画面
@@ -69,7 +104,7 @@ export default function ContactPage() {
 
       {/* セクション2: フォーム */}
       <section className="section-normal bg-gray">
-        <div className="container-content max-w-[680px]">
+        <FadeInSection className="container-content max-w-[680px]">
           <form onSubmit={handleSubmit} className="space-y-10">
             {/* お問い合わせ種別 */}
             <div>
@@ -223,6 +258,13 @@ export default function ContactPage() {
               </label>
             </div>
 
+            {/* エラーメッセージ */}
+            {errorMessage && (
+              <div className="p-4 bg-red-50 border border-red-200 text-red-700 text-[14px]">
+                {errorMessage}
+              </div>
+            )}
+
             {/* 送信ボタン */}
             <div className="pt-4">
               <button
@@ -234,7 +276,7 @@ export default function ContactPage() {
               </button>
             </div>
           </form>
-        </div>
+        </FadeInSection>
       </section>
     </>
   );

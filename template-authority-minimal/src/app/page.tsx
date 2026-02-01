@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { pages, meta, navigation } from '@/lib/site';
+import FadeInSection from '@/components/animation/FadeInSection';
 
 export default function Home() {
   const { top } = pages;
@@ -30,7 +31,7 @@ export default function Home() {
 
       {/* セクション2: 理念の導入 */}
       <section className="section-large">
-        <div className="flex flex-col items-center text-center px-6">
+        <FadeInSection className="flex flex-col items-center text-center px-6">
           <blockquote className="font-mincho text-[18px] lg:text-[24px] leading-[2.0] tracking-[0.05em] text-body-color max-w-[600px]">
             {top.philosophyTeaser.quote}
           </blockquote>
@@ -41,7 +42,7 @@ export default function Home() {
           >
             {top.philosophyTeaser.linkText}
           </Link>
-        </div>
+        </FadeInSection>
       </section>
 
       {/* セクション3: 事業の暗示 */}
@@ -59,9 +60,10 @@ export default function Home() {
               const pos = positions[index] || positions[0];
 
               return (
-                <div
+                <FadeInSection
                   key={service.numberEn}
                   className="lg:absolute"
+                  delay={index * 150}
                   style={{
                     left: pos.left,
                     top: pos.top,
@@ -73,26 +75,26 @@ export default function Home() {
                   <span className="block mt-2 text-[18px] lg:text-[20px] font-medium text-main">
                     {service.titleJa}
                   </span>
-                </div>
+                </FadeInSection>
               );
             })}
           </div>
 
           {/* サービス詳細リンク */}
-          <div className="mt-20 lg:mt-32 text-center lg:text-left">
+          <FadeInSection className="mt-20 lg:mt-32 text-center lg:text-left" delay={450}>
             <Link
               href="/service"
               className="text-link text-link-arrow"
             >
               サービス詳細
             </Link>
-          </div>
+          </FadeInSection>
         </div>
       </section>
 
       {/* セクション4: お問い合わせ導線 */}
       <section className="section-large">
-        <div className="flex flex-col items-center text-center px-6">
+        <FadeInSection className="flex flex-col items-center text-center px-6">
           <p className="font-mincho text-[22px] lg:text-[28px] leading-[1.6] text-body-color whitespace-pre-line">
             {top.cta.text}
           </p>
@@ -103,7 +105,7 @@ export default function Home() {
           >
             {top.cta.buttonText}
           </Link>
-        </div>
+        </FadeInSection>
       </section>
     </>
   );

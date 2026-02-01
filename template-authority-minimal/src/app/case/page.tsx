@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { cases } from '@/lib/site';
+import FadeInSection from '@/components/animation/FadeInSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function CasePage() {
       {/* セクション2: メイン事例 */}
       {featuredCase && (
         <section className="section-normal">
-          <div className="container-content">
+          <FadeInSection className="container-content">
             <Link href={`/case/${featuredCase.slug}`} className="group block">
               <div className="relative aspect-[16/9] bg-gray overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center text-light text-sm">
@@ -51,7 +52,7 @@ export default function CasePage() {
                 </h2>
               </div>
             </Link>
-          </div>
+          </FadeInSection>
         </section>
       )}
 
@@ -60,27 +61,31 @@ export default function CasePage() {
         <section className="bg-gray section-normal">
           <div className="container-content">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-              {otherCases.map((caseItem) => (
-                <Link
+              {otherCases.map((caseItem, index) => (
+                <FadeInSection
                   key={caseItem.slug}
-                  href={`/case/${caseItem.slug}`}
-                  className="group block"
+                  delay={index * 100}
                 >
-                  <div className="relative aspect-[4/3] bg-white overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center text-light text-sm">
-                      Case Image
+                  <Link
+                    href={`/case/${caseItem.slug}`}
+                    className="group block"
+                  >
+                    <div className="relative aspect-[4/3] bg-white overflow-hidden">
+                      <div className="absolute inset-0 flex items-center justify-center text-light text-sm">
+                        Case Image
+                      </div>
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
                     </div>
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
-                  </div>
-                  <div className="mt-5">
-                    <p className="text-[12px] text-light">
-                      {caseItem.client} / {caseItem.scope.join('、')}
-                    </p>
-                    <h3 className="mt-2 font-mincho text-[18px] lg:text-[20px] text-main group-hover:text-sub transition-colors">
-                      {caseItem.title}
-                    </h3>
-                  </div>
-                </Link>
+                    <div className="mt-5">
+                      <p className="text-[12px] text-light">
+                        {caseItem.client} / {caseItem.scope.join('、')}
+                      </p>
+                      <h3 className="mt-2 font-mincho text-[18px] lg:text-[20px] text-main group-hover:text-sub transition-colors">
+                        {caseItem.title}
+                      </h3>
+                    </div>
+                  </Link>
+                </FadeInSection>
               ))}
             </div>
           </div>
@@ -89,7 +94,7 @@ export default function CasePage() {
 
       {/* セクション4: CTA */}
       <section className="section-normal">
-        <div className="flex flex-col items-center text-center px-6">
+        <FadeInSection className="flex flex-col items-center text-center px-6">
           <p className="text-[16px] lg:text-[18px] text-body-color">
             プロジェクトについてお聞かせください。
           </p>
@@ -99,7 +104,7 @@ export default function CasePage() {
           >
             Contact
           </Link>
-        </div>
+        </FadeInSection>
       </section>
     </>
   );

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { pages } from '@/lib/site';
+import FadeInSection from '@/components/animation/FadeInSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export default function TeamPage() {
       {/* セクション2: 代表者 */}
       {representative && (
         <section className="section-normal">
-          <div className="flex flex-col items-center px-6">
+          <FadeInSection className="flex flex-col items-center px-6">
             {/* 代表者写真 */}
             <div className="w-full max-w-[320px] lg:max-w-[400px]">
               <div className="relative aspect-[3/4] bg-gray">
@@ -55,7 +56,7 @@ export default function TeamPage() {
                 {representative.title}
               </p>
             </div>
-          </div>
+          </FadeInSection>
         </section>
       )}
 
@@ -64,8 +65,8 @@ export default function TeamPage() {
         <section className="bg-gray section-normal">
           <div className="container-content">
             <div className="grid grid-cols-2 gap-8 lg:gap-12 max-w-[800px] mx-auto">
-              {otherMembers.map((member) => (
-                <div key={member.id} className="text-center">
+              {otherMembers.map((member, index) => (
+                <FadeInSection key={member.id} delay={index * 100} className="text-center">
                   {/* メンバー写真 */}
                   <div className="relative aspect-[3/4] bg-white">
                     <div className="absolute inset-0 flex items-center justify-center text-light text-sm">
@@ -85,7 +86,7 @@ export default function TeamPage() {
                       {member.title}
                     </p>
                   </div>
-                </div>
+                </FadeInSection>
               ))}
             </div>
           </div>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { columns, formatDate } from '@/lib/site';
+import FadeInSection from '@/components/animation/FadeInSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -31,24 +32,25 @@ export default function ColumnPage() {
       <section className="section-normal">
         <div className="container-content max-w-[800px]">
           <div className="divide-y divide-border">
-            {sortedColumns.map((column) => (
-              <Link
-                key={column.slug}
-                href={`/column/${column.slug}`}
-                className="group block py-10 first:pt-0"
-              >
-                <p className="font-serif-en text-[13px] tracking-[0.1em] text-light">
-                  {formatDate(column.date)}
-                </p>
-                <h2 className="mt-3 font-mincho text-[20px] lg:text-[24px] text-main group-hover:text-sub transition-colors leading-[1.6]">
-                  {column.title}
-                </h2>
-                {column.subtitle && (
-                  <p className="mt-2 text-[14px] text-sub">
-                    {column.subtitle}
+            {sortedColumns.map((column, index) => (
+              <FadeInSection key={column.slug} delay={index * 80}>
+                <Link
+                  href={`/column/${column.slug}`}
+                  className="group block py-10 first:pt-0"
+                >
+                  <p className="font-serif-en text-[13px] tracking-[0.1em] text-light">
+                    {formatDate(column.date)}
                   </p>
-                )}
-              </Link>
+                  <h2 className="mt-3 font-mincho text-[20px] lg:text-[24px] text-main group-hover:text-sub transition-colors leading-[1.6]">
+                    {column.title}
+                  </h2>
+                  {column.subtitle && (
+                    <p className="mt-2 text-[14px] text-sub">
+                      {column.subtitle}
+                    </p>
+                  )}
+                </Link>
+              </FadeInSection>
             ))}
           </div>
         </div>

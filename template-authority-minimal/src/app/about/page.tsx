@@ -1,4 +1,5 @@
 import { pages, company } from '@/lib/site';
+import FadeInSection from '@/components/animation/FadeInSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -38,7 +39,7 @@ export default function AboutPage() {
 
       {/* セクション2: 会社情報 */}
       <section className="section-normal">
-        <div className="container-content max-w-[800px]">
+        <FadeInSection className="container-content max-w-[800px]">
           <div className="border-t border-border">
             {companyInfo.map((item, index) => (
               <div
@@ -54,13 +55,13 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </div>
+        </FadeInSection>
       </section>
 
       {/* セクション3: 沿革（showHistory が true の場合のみ） */}
       {about.showHistory && company.history && company.history.length > 0 && (
         <section className="bg-gray section-normal">
-          <div className="container-content max-w-[800px]">
+          <FadeInSection className="container-content max-w-[800px]">
             {/* セクションタイトル */}
             <div className="mb-12 lg:mb-16">
               <span className="block font-serif-en text-[12px] lg:text-[14px] tracking-[0.2em] text-light">
@@ -84,14 +85,14 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </FadeInSection>
         </section>
       )}
 
       {/* セクション4: アクセス（showAccess が true の場合のみ） */}
       {about.showAccess && company.access && (
         <section className="section-normal">
-          <div className="container-content max-w-[800px]">
+          <FadeInSection className="container-content max-w-[800px]">
             {/* セクションタイトル */}
             <div className="mb-12 lg:mb-16">
               <span className="block font-serif-en text-[12px] lg:text-[14px] tracking-[0.2em] text-light">
@@ -121,7 +122,7 @@ export default function AboutPage() {
                 <span className="text-light text-sm">Map</span>
               </div>
             </div>
-          </div>
+          </FadeInSection>
         </section>
       )}
     </>

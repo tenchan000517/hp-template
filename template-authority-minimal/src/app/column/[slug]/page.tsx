@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { columns, getColumnBySlug, getRelatedColumns, formatDate } from '@/lib/site';
+import FadeInSection from '@/components/animation/FadeInSection';
 import type { Metadata } from 'next';
 
 type Props = {
@@ -95,17 +96,17 @@ export default async function ColumnDetailPage({ params }: Props) {
 
       {/* セクション2: 本文 */}
       <section className="pb-20 lg:pb-32">
-        <div className="container-content max-w-[800px]">
+        <FadeInSection className="container-content max-w-[800px]">
           <article className="prose-custom">
             {renderContent(column.content)}
           </article>
-        </div>
+        </FadeInSection>
       </section>
 
       {/* セクション3: 関連記事 */}
       {relatedColumns.length > 0 && (
         <section className="bg-gray section-normal">
-          <div className="container-content max-w-[800px]">
+          <FadeInSection className="container-content max-w-[800px]">
             <div className="mb-10">
               <span className="block font-serif-en text-[12px] lg:text-[14px] tracking-[0.2em] text-light">
                 Related
@@ -131,7 +132,7 @@ export default async function ColumnDetailPage({ params }: Props) {
                 </Link>
               ))}
             </div>
-          </div>
+          </FadeInSection>
         </section>
       )}
 

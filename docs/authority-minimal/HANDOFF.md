@@ -3,6 +3,7 @@
 このドキュメントは、設計フェーズから実装フェーズへの引き継ぎ資料です。
 
 **実装ステータス: ✅ 完了（2026年2月1日）**
+**画像生成: ✅ 完了（18枚生成済み）**
 
 ---
 
@@ -170,18 +171,16 @@ template-authority-minimal/
 
 ## 残タスク（運用開始前）
 
-### 1. 画像の準備
+### 1. 画像の準備 ✅ 完了
 
-現在、全ての画像はプレースホルダー状態です。以下のいずれかで対応:
+AI生成画像が配置済み（18枚）:
+- ポートレート: 5枚（`philosophy/portrait.jpg`, `team/*.jpg`）
+- 事例画像: 11枚（`case/*/main.jpg`, `case/*/thumbnail.jpg`, `case/*/result-*.jpg`）
+- OGP: 1枚（`og-image.jpg`）
+- ファビコン: 5サイズ
 
-**オプション1: 実際の撮影**
+**実際の運用時は撮影写真への差し替えを推奨**
 - `photo_guide.md` に基づき撮影を行う
-
-**オプション2: AI画像生成**
-- `photo_guide.md` のプロンプトを使用してNanobananaで生成
-
-**オプション3: ストック素材**
-- Unsplash, Pexelsなどから取得（人物の統一感は難しい）
 
 ### 2. site.json のカスタマイズ
 
@@ -257,4 +256,117 @@ template-authority-minimal/
 
 ---
 
+---
+
+## 他テンプレートとの比較（ギャップ分析）
+
+### 比較対象
+- `template-leadgen-minimal`: リード獲得型ミニマル
+- `template-trust-visual`: 信頼訴求型ビジュアル
+
+### 比較結果
+
+| 項目 | leadgen-minimal | trust-visual | authority-minimal | 状態 |
+|------|-----------------|--------------|-------------------|------|
+| アニメーション | FadeInView (framer-motion) | FadeInSection (CSS) | なし | **要検討** |
+| ScrollIndicator | あり | なし | なし | ギャップ |
+| layout.tsx（各ページ） | あり | あり | なし（page内でmetadata） | 差異 |
+| OGP動的生成 | なし | あり | あり | OK |
+| 外部依存 | framer-motion | なし | なし | OK |
+
+### 改善提案
+
+#### 1. アニメーションコンポーネントの追加（優先度: 中）
+
+Authority Minimalの「静謐」なコンセプトを保ちつつ、控えめなフェードインアニメーションを追加することで、より洗練された印象に。
+
+**推奨実装**: `trust-visual`の`FadeInSection`をベースに（依存パッケージなし）
+
+```tsx
+// src/components/animation/FadeInSection.tsx
+// CSS + IntersectionObserverで実装（framer-motion不要）
+```
+
+#### 2. layout.tsxの追加（優先度: 低）
+
+現状、各ページ内で`export const metadata`を定義しており機能的には問題なし。
+一貫性のためにlayout.tsxを追加することも可能だが、必須ではない。
+
+### 判断
+
+- **アニメーション**: デザイン方針による。「静謐」を重視するなら現状維持、「洗練」を加えるなら追加
+- **layout.tsx**: 現状維持でOK（動作に影響なし）
+- **ScrollIndicator**: Authority Minimalには不要（トップページのデザイン方針が異なる）
+
+---
+
+## 改善推奨事項（trust-visual比較）
+
+他テンプレート（trust-visual）との比較で特定された改善ポイント。
+
+### 高優先度（SEO・機能強化）
+
+| 項目 | 現状 | 推奨対応 | 参考実装 |
+|------|------|----------|----------|
+| JSON-LD構造化データ | ❌ 未実装 | LocalBusinessスキーマを追加 | `trust-visual/src/app/layout.tsx` |
+| canonical URL | ❌ 未実装 | `metadata.alternates.canonical` を追加 | `trust-visual/src/app/layout.tsx` |
+| robots meta | ❌ 未実装 | `metadata.robots` を追加 | `trust-visual/src/app/layout.tsx` |
+| API Route | ❌ 未実装 | `/api/contact` でサーバーサイド処理 | `trust-visual/src/app/api/contact/route.ts` |
+| metadataBase | ハードコード | `meta.siteUrl` から動的設定 | `trust-visual/src/app/layout.tsx` |
+| Twitter Card images | ❌ 未実装 | `twitter.images` を追加 | `trust-visual/src/app/layout.tsx` |
+
+### 中優先度（品質向上）
+
+| 項目 | 現状 | 推奨対応 |
+|------|------|----------|
+| フォームバリデーション | フロントエンドのみ | サーバーサイドバリデーション追加 |
+| メール送信 | 未実装 | Resend/SendGrid 連携 |
+
+### 実装例: JSON-LD追加
+
+```tsx
+// src/app/layout.tsx に追加
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: meta.siteName,
+  description: meta.description,
+  url: "https://your-domain.com",
+  // ... 会社情報
+};
+
+// <head> 内に追加
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+/>
+```
+
+### 実装例: metadata強化
+
+```tsx
+// metadata を更新
+export const metadata: Metadata = {
+  metadataBase: new URL(meta.siteUrl), // ハードコードから変更
+  // ... 既存設定
+  twitter: {
+    card: "summary_large_image",
+    title: meta.siteName,
+    description: meta.description,
+    images: [meta.ogImage], // 追加
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: meta.siteUrl,
+  },
+};
+```
+
+---
+
 *実装完了: 2026年2月1日*
+*画像生成完了: 2026年2月1日*
+*ギャップ分析完了: 2026年2月1日*

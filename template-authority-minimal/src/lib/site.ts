@@ -13,6 +13,7 @@ export interface Meta {
   tagline: string;
   taglineEn?: string;
   description: string;
+  siteUrl: string;
   ogImage: string;
   favicon: string;
   themeColor: string;
