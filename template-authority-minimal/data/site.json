@@ -1,0 +1,501 @@
+{
+  "meta": {
+    "siteName": "株式会社〇〇",
+    "siteNameEn": "Company Name Inc.",
+    "tagline": "本質を、かたちに。",
+    "taglineEn": "Essence into Form.",
+    "description": "ブランディングとデザインで、本質的な価値を生み出す。",
+    "ogImage": "/images/og-image.jpg",
+    "favicon": "/favicon.ico",
+    "themeColor": "#1E3A5F",
+    "googleAnalyticsId": ""
+  },
+  "company": {
+    "name": "株式会社〇〇",
+    "nameEn": "Company Name Inc.",
+    "representative": {
+      "name": "山田 太郎",
+      "nameEn": "Taro Yamada",
+      "title": "代表取締役",
+      "image": "/images/team/yamada.jpg"
+    },
+    "established": "2003年4月",
+    "address": {
+      "postalCode": "150-0001",
+      "prefecture": "東京都",
+      "city": "渋谷区",
+      "street": "神宮前1-2-3",
+      "building": "〇〇ビル 5F",
+      "full": "東京都渋谷区神宮前1-2-3 〇〇ビル 5F"
+    },
+    "contact": {
+      "phone": "03-0000-0000",
+      "email": "info@example.com",
+      "businessHours": "平日 10:00 - 18:00"
+    },
+    "business": [
+      "ブランディング",
+      "ウェブサイト制作",
+      "コンサルティング"
+    ],
+    "capital": "1,000万円",
+    "employees": "10名",
+    "history": [
+      { "year": 2003, "event": "創業。代表 山田が個人事業として開始" },
+      { "year": 2005, "event": "株式会社〇〇 設立" },
+      { "year": 2010, "event": "渋谷区に事務所移転" },
+      { "year": 2015, "event": "□□賞 受賞" },
+      { "year": 2020, "event": "従業員10名体制に" }
+    ],
+    "access": {
+      "station": "〇〇駅",
+      "walkMinutes": 5,
+      "mapEmbedUrl": "",
+      "mapImageUrl": "/images/about/map.jpg"
+    }
+  },
+  "navigation": {
+    "header": [
+      { "label": "Philosophy", "href": "/philosophy" },
+      { "label": "Service", "href": "/service" },
+      { "label": "Case", "href": "/case" },
+      { "label": "Column", "href": "/column" },
+      { "label": "Team", "href": "/team" },
+      { "label": "About", "href": "/about" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "footer": [
+      { "label": "Privacy Policy", "href": "/privacy" }
+    ]
+  },
+  "pages": {
+    "top": {
+      "catchphrase": {
+        "main": "本質を、\nかたちに。",
+        "sub": "Essence into Form."
+      },
+      "philosophyTeaser": {
+        "quote": "私たちは、答えではなく問いを持つクライアントと共に歩みます。",
+        "linkText": "続きを読む",
+        "linkHref": "/philosophy"
+      },
+      "services": [
+        {
+          "numberEn": "01",
+          "titleEn": "Strategy",
+          "titleJa": "戦略設計"
+        },
+        {
+          "numberEn": "02",
+          "titleEn": "Design",
+          "titleJa": "デザイン"
+        },
+        {
+          "numberEn": "03",
+          "titleEn": "Branding",
+          "titleJa": "ブランディング"
+        }
+      ],
+      "cta": {
+        "text": "プロジェクトについて\nお聞かせください。",
+        "buttonText": "Contact",
+        "buttonHref": "/contact"
+      }
+    },
+    "philosophy": {
+      "title": {
+        "en": "Philosophy",
+        "ja": "代表メッセージ"
+      },
+      "portrait": {
+        "image": "/images/philosophy/portrait.jpg",
+        "caption": "代表取締役　山田 太郎"
+      },
+      "message": {
+        "heading": "本質を、かたちに。",
+        "body": "私がこの仕事を始めたのは、一つの違和感からでした。\n\n20年前、ある大企業のプロジェクトに参画した時のこと。クライアントは「とにかく目立つデザインを」と求めました。しかし、本当に必要だったのは、彼らの事業の「本質」を見つめ直すことでした。\n\n表面的な装飾ではなく、根本的な価値を見つけ、それを適切なかたちで表現する。それが私たちの仕事です。\n\n私たちは、すべてのクライアントに「なぜ？」と問いかけます。なぜこの事業を始めたのか。なぜこの価値を届けたいのか。その答えの中にこそ、本当のブランドの核があるからです。\n\n派手な演出や、流行のデザインを求める方には、私たちは適さないかもしれません。しかし、自社の本質と向き合い、長く愛されるブランドを築きたいとお考えの方には、きっとお力になれるはずです。",
+        "signature": {
+          "title": "代表取締役",
+          "name": "山田 太郎"
+        }
+      },
+      "profile": {
+        "nameJa": "山田 太郎",
+        "nameEn": "Taro Yamada",
+        "items": [
+          "1975年　東京都生まれ",
+          "1998年　〇〇大学 建築学科 卒業",
+          "2003年　△△事務所 設立",
+          "2015年　□□賞 受賞"
+        ]
+      }
+    },
+    "service": {
+      "title": {
+        "en": "Services",
+        "ja": "私たちの仕事"
+      },
+      "lead": "本質的な課題に向き合い、\n持続的な価値を生み出す。",
+      "philosophy": {
+        "text": "私たちは「答え」を売りません。\nクライアントと共に「問い」を立て、\n本質に迫ることで、\n表面的な対処ではなく、\n根本的な変化を実現します。"
+      },
+      "services": [
+        {
+          "numberEn": "01",
+          "titleEn": "Strategy",
+          "titleJa": "戦略設計",
+          "description": "課題を正しく定義し、\n進むべき方向を明確にする。",
+          "details": [
+            "現状分析と課題の構造化",
+            "ゴール設定と戦略立案",
+            "実行計画の策定"
+          ]
+        },
+        {
+          "numberEn": "02",
+          "titleEn": "Design",
+          "titleJa": "デザイン",
+          "description": "戦略を具体的なかたちにする。\n美しさと機能を両立させる。",
+          "details": [
+            "ビジュアルアイデンティティ",
+            "ウェブサイト・アプリ設計",
+            "プロダクトデザイン"
+          ]
+        },
+        {
+          "numberEn": "03",
+          "titleEn": "Branding",
+          "titleJa": "ブランディング",
+          "description": "一貫した価値を届け続ける\n仕組みを構築する。",
+          "details": [
+            "ブランド戦略策定",
+            "コミュニケーション設計",
+            "社内浸透プログラム"
+          ]
+        }
+      ],
+      "process": [
+        {
+          "numberEn": "01",
+          "title": "ヒアリング",
+          "description": "課題と目標を丁寧にお聞きします。\nこの段階で費用は発生しません。"
+        },
+        {
+          "numberEn": "02",
+          "title": "ご提案",
+          "description": "課題を整理し、解決の方向性と\n概算費用をご提示します。"
+        },
+        {
+          "numberEn": "03",
+          "title": "実行",
+          "description": "定期的なコミュニケーションを取りながら、\nプロジェクトを進行します。"
+        },
+        {
+          "numberEn": "04",
+          "title": "完了・継続",
+          "description": "成果を確認し、必要に応じて\n継続的なサポートを行います。"
+        }
+      ],
+      "cta": {
+        "text": "これまでの仕事をご覧ください。",
+        "links": [
+          { "text": "事例を見る", "href": "/case" },
+          { "text": "相談する", "href": "/contact" }
+        ]
+      }
+    },
+    "team": {
+      "title": {
+        "en": "Team",
+        "ja": "チーム"
+      },
+      "lead": "私たちと一緒に、\n本質的な価値を生み出しましょう。",
+      "members": [
+        {
+          "id": "yamada",
+          "nameJa": "山田 太郎",
+          "nameEn": "Taro Yamada",
+          "title": "代表取締役 / ブランドストラテジスト",
+          "image": "/images/team/yamada.jpg",
+          "isRepresentative": true
+        },
+        {
+          "id": "suzuki",
+          "nameJa": "鈴木 花子",
+          "nameEn": "Hanako Suzuki",
+          "title": "デザイナー",
+          "image": "/images/team/suzuki.jpg",
+          "isRepresentative": false
+        },
+        {
+          "id": "sato",
+          "nameJa": "佐藤 一郎",
+          "nameEn": "Ichiro Sato",
+          "title": "ストラテジスト",
+          "image": "/images/team/sato.jpg",
+          "isRepresentative": false
+        },
+        {
+          "id": "tanaka",
+          "nameJa": "田中 次郎",
+          "nameEn": "Jiro Tanaka",
+          "title": "プロジェクトマネージャー",
+          "image": "/images/team/tanaka.jpg",
+          "isRepresentative": false
+        }
+      ]
+    },
+    "about": {
+      "title": {
+        "en": "About",
+        "ja": "会社概要"
+      },
+      "showHistory": true,
+      "showAccess": true
+    },
+    "contact": {
+      "title": {
+        "en": "Contact",
+        "ja": "お問い合わせ"
+      },
+      "lead": "プロジェクトについて\nお聞かせください。",
+      "responseTime": "内容を確認後、2営業日以内に\n担当者よりご連絡いたします。",
+      "inquiryTypes": [
+        { "value": "new_project", "label": "新規プロジェクトのご相談" },
+        { "value": "improvement", "label": "既存サイト・ブランドの改善" },
+        { "value": "branding", "label": "ブランディング・戦略について" },
+        { "value": "other", "label": "その他" }
+      ],
+      "budgetOptions": [
+        { "value": "", "label": "選択してください" },
+        { "value": "under_50", "label": "50万円未満" },
+        { "value": "50_100", "label": "50万円〜100万円" },
+        { "value": "100_300", "label": "100万円〜300万円" },
+        { "value": "300_500", "label": "300万円〜500万円" },
+        { "value": "over_500", "label": "500万円以上" },
+        { "value": "undecided", "label": "未定・相談したい" }
+      ],
+      "timelineOptions": [
+        { "value": "", "label": "選択してください" },
+        { "value": "asap", "label": "なるべく早く" },
+        { "value": "1month", "label": "1ヶ月以内" },
+        { "value": "3months", "label": "3ヶ月以内" },
+        { "value": "6months", "label": "半年以内" },
+        { "value": "undecided", "label": "時期は未定" }
+      ],
+      "thanks": {
+        "title": {
+          "en": "Thank you",
+          "ja": "お問い合わせありがとうございます"
+        },
+        "message": "内容を確認の上、\n2営業日以内にご連絡いたします。\n\nしばらくお待ちください。",
+        "backLink": {
+          "text": "トップページへ戻る",
+          "href": "/"
+        }
+      }
+    },
+    "privacy": {
+      "title": {
+        "en": "Privacy Policy",
+        "ja": "個人情報保護方針"
+      },
+      "preamble": "株式会社〇〇（以下「当社」といいます）は、お客様からお預かりする個人情報の重要性を認識し、その適切な保護と管理に努めます。当社は、以下の方針に基づき個人情報を取り扱います。",
+      "sections": [
+        {
+          "title": "個人情報の定義",
+          "content": "本方針において「個人情報」とは、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日その他の記述等により特定の個人を識別することができるもの（他の情報と容易に照合することができ、それにより特定の個人を識別することができることとなるものを含む）をいいます。"
+        },
+        {
+          "title": "個人情報の収集",
+          "content": "当社は、以下の場合に個人情報を収集することがあります。\n\n・お問い合わせフォームからのご連絡時\n・サービスのお申し込み時\n・採用へのご応募時"
+        },
+        {
+          "title": "個人情報の利用目的",
+          "content": "当社は、収集した個人情報を以下の目的で利用いたします。\n\n・お問い合わせへの回答\n・サービスの提供\n・採用選考\n・当社からのお知らせの送付"
+        },
+        {
+          "title": "個人情報の第三者提供",
+          "content": "当社は、法令に基づく場合を除き、ご本人の同意なく個人情報を第三者に提供することはありません。"
+        },
+        {
+          "title": "個人情報の管理",
+          "content": "当社は、個人情報の正確性を保ち、これを安全に管理いたします。個人情報の紛失、破壊、改ざん及び漏洩等を防止するため、適切な安全管理措置を講じます。"
+        },
+        {
+          "title": "個人情報の開示・訂正・削除",
+          "content": "ご本人から個人情報の開示、訂正、削除等のご請求があった場合は、ご本人であることを確認の上、速やかに対応いたします。"
+        },
+        {
+          "title": "プライバシーポリシーの変更",
+          "content": "当社は、必要に応じて本方針を変更することがあります。変更後の方針は、当社ウェブサイトに掲載した時点から効力を生じるものとします。"
+        }
+      ],
+      "enactedDate": "2020年4月1日",
+      "revisedDate": "2024年1月15日",
+      "contact": {
+        "manager": "山田 太郎",
+        "email": "privacy@example.com"
+      }
+    }
+  },
+  "cases": [
+    {
+      "slug": "abc-corporation-rebranding",
+      "client": "株式会社ABC",
+      "industry": "製造業",
+      "year": 2023,
+      "scope": ["戦略設計", "ブランディング"],
+      "title": "創業50年の老舗製造業、次の50年へ向けたリブランディング",
+      "lead": "創業50年を迎える老舗製造業の、次の50年に向けたブランド刷新を担当しました。",
+      "thumbnail": "/images/case/abc/thumbnail.jpg",
+      "mainImage": "/images/case/abc/main.jpg",
+      "images": [
+        "/images/case/abc/result-01.jpg",
+        "/images/case/abc/result-02.jpg",
+        "/images/case/abc/result-03.jpg"
+      ],
+      "challenge": "創業当時から変わらないロゴとビジュアルアイデンティティは、社員の高齢化とともに「古い会社」という印象を与えていました。\n\n特に採用面で苦戦しており、若い世代に「働きたい」と思われるブランドイメージへの刷新が急務でした。",
+      "approach": [
+        {
+          "numberEn": "01",
+          "title": "ヒアリング・現状分析",
+          "description": "経営層、社員、顧客へのインタビューを実施し、現状の課題と理想の姿を明確化しました。"
+        },
+        {
+          "numberEn": "02",
+          "title": "コンセプト設計",
+          "description": "「伝統と革新の融合」をコンセプトに、老舗の信頼感を活かしながら新しさを表現する方向性を策定しました。"
+        },
+        {
+          "numberEn": "03",
+          "title": "ビジュアル開発",
+          "description": "ロゴ、カラー、フォントの刷新を行い、統一感のあるビジュアルアイデンティティを構築しました。"
+        },
+        {
+          "numberEn": "04",
+          "title": "展開・浸透",
+          "description": "名刺、ウェブサイト、社内ツールへの展開を行い、社員向けのブランド研修も実施しました。"
+        }
+      ],
+      "result": "採用応募数が前年比180%に増加。社内アンケートでは「会社に誇りを持てるようになった」という声が多数寄せられました。",
+      "resultMetrics": [
+        { "value": "180%", "label": "採用応募数の増加" },
+        { "value": "92%", "label": "社員満足度" }
+      ],
+      "testimonial": {
+        "quote": "正直、最初は半信半疑でした。でも、プロセスを通じて社員の意識が変わり、今では全員がこのブランドに誇りを持っています。",
+        "author": "株式会社ABC 代表取締役 佐藤 様"
+      },
+      "featured": true,
+      "order": 1
+    },
+    {
+      "slug": "xyz-startup-branding",
+      "client": "株式会社XYZ",
+      "industry": "IT・スタートアップ",
+      "year": 2023,
+      "scope": ["戦略設計", "デザイン", "ブランディング"],
+      "title": "急成長スタートアップの、選ばれるブランドづくり",
+      "lead": "シリーズBを達成したスタートアップの、次のフェーズに向けたブランド構築をサポートしました。",
+      "thumbnail": "/images/case/xyz/thumbnail.jpg",
+      "mainImage": "/images/case/xyz/main.jpg",
+      "images": [
+        "/images/case/xyz/result-01.jpg",
+        "/images/case/xyz/result-02.jpg"
+      ],
+      "challenge": "急成長により、社内外でブランドイメージにばらつきが生じていました。統一感のあるブランド体験を構築し、企業価値を高めることが課題でした。",
+      "approach": [
+        {
+          "numberEn": "01",
+          "title": "ブランド診断",
+          "description": "現状のブランド接点を整理し、課題を可視化しました。"
+        },
+        {
+          "numberEn": "02",
+          "title": "ブランドコア策定",
+          "description": "MVV（ミッション・ビジョン・バリュー）を再定義し、ブランドの核を明確にしました。"
+        },
+        {
+          "numberEn": "03",
+          "title": "ガイドライン策定",
+          "description": "ブランドガイドラインを作成し、全社で統一したブランド表現を可能にしました。"
+        }
+      ],
+      "result": "ブランド認知度が向上し、採用においても「ブランドに惹かれて応募した」という声が増加しました。",
+      "featured": true,
+      "order": 2
+    },
+    {
+      "slug": "def-clinic-website",
+      "client": "DEFクリニック",
+      "industry": "医療",
+      "year": 2022,
+      "scope": ["デザイン"],
+      "title": "信頼と安心を伝える、クリニックサイトリニューアル",
+      "lead": "開院10周年を迎えたクリニックのウェブサイトを全面リニューアルしました。",
+      "thumbnail": "/images/case/def/thumbnail.jpg",
+      "mainImage": "/images/case/def/main.jpg",
+      "images": [],
+      "challenge": "既存サイトはスマートフォン対応が不十分で、患者様からの問い合わせに支障が出ていました。",
+      "approach": [
+        {
+          "numberEn": "01",
+          "title": "ユーザー調査",
+          "description": "患者様のニーズと行動パターンを調査しました。"
+        },
+        {
+          "numberEn": "02",
+          "title": "情報設計",
+          "description": "必要な情報に素早くアクセスできる構造を設計しました。"
+        },
+        {
+          "numberEn": "03",
+          "title": "デザイン・実装",
+          "description": "清潔感と安心感を表現したデザインで実装しました。"
+        }
+      ],
+      "result": "サイトリニューアル後、ウェブ経由の予約数が40%増加しました。",
+      "featured": false,
+      "order": 3
+    }
+  ],
+  "columns": [
+    {
+      "slug": "why-price-competition-fails",
+      "title": "なぜ「安さ」で勝負すると負けるのか",
+      "subtitle": "価格競争から脱却するためのブランディング戦略",
+      "date": "2024-01-15",
+      "category": "branding",
+      "author": "yamada",
+      "thumbnail": null,
+      "content": "多くの企業が「価格で勝負」しようとします。しかし、それは最も危険な戦略です。\n\n## 価格競争の本当の問題\n\n価格競争の問題は、利益率の低下だけではありません。価格で選ばれるということは、「他に選ぶ理由がない」ことを意味します。\n\nつまり、より安い競合が現れれば、顧客は簡単に離れていきます。\n\n## ブランドで選ばれる会社になる\n\n一方、ブランドで選ばれる会社は違います。「この会社だから」「この人たちに任せたいから」という理由で選ばれます。\n\n価格は二の次になり、長期的な関係を築くことができます。\n\n## まずは自社の「本質」を見つめ直す\n\nブランディングの第一歩は、自社の本質を見つめ直すことです。\n\n- なぜこの事業を始めたのか？\n- 顧客に本当に届けたい価値は何か？\n- 競合にはない、自社だけの強みは何か？\n\nこれらの問いに答えることで、価格ではなく価値で選ばれる会社への第一歩を踏み出せます。",
+      "relatedSlugs": ["rebranding-timing", "design-evaluation"],
+      "featured": true
+    },
+    {
+      "slug": "rebranding-timing",
+      "title": "リブランディングのタイミング",
+      "subtitle": "変えるべき時と、守るべきもの",
+      "date": "2024-01-08",
+      "category": "branding",
+      "author": "yamada",
+      "thumbnail": null,
+      "content": "「そろそろブランドを刷新したい」というご相談をよくいただきます。\n\nしかし、リブランディングには適切なタイミングがあります。\n\n## リブランディングを検討すべきサイン\n\n1. **ターゲット顧客との乖離** - 顧客層が変化し、現在のブランドイメージが合わなくなった\n2. **事業内容の変化** - 新規事業の開始や、主力事業の変更\n3. **競合環境の変化** - 市場の成熟や新規参入により、差別化が必要になった\n4. **社内の意識変化** - 社員が現在のブランドに誇りを持てなくなった\n\n## 守るべきブランドの核\n\n一方で、リブランディングで変えてはいけないものもあります。\n\n- 創業からの理念や価値観\n- 顧客から信頼されている要素\n- 社員が共感しているブランドの本質\n\n表面を変えても、核を守ることで、既存顧客を失わずに新しい顧客を獲得できます。",
+      "relatedSlugs": ["why-price-competition-fails"],
+      "featured": true
+    },
+    {
+      "slug": "design-evaluation",
+      "title": "良いデザインの見分け方",
+      "subtitle": "発注者が知っておくべき評価の視点",
+      "date": "2023-12-20",
+      "category": "design",
+      "author": "yamada",
+      "thumbnail": null,
+      "content": "デザインを発注する立場で、「これは良いデザインなのか？」と判断に迷うことがあるかもしれません。\n\n## デザインを評価する3つの視点\n\n### 1. 目的との整合性\n\n最も重要なのは、デザインが目的を達成できるかどうかです。\n\n「見た目が良い」だけでは不十分です。ターゲットに正しいメッセージを届けられるか、行動を促せるか、という視点で評価してください。\n\n### 2. 一貫性\n\n良いデザインには一貫性があります。色、フォント、トーンが統一されており、ブランドとして認識できます。\n\n逆に、要素ごとにバラバラな印象を受けるデザインは、ブランドの信頼性を損ないます。\n\n### 3. 持続性\n\n流行を追いすぎたデザインは、すぐに古くなります。\n\n本質的な美しさを持ち、5年後も10年後も使えるデザインを選びましょう。",
+      "relatedSlugs": ["why-price-competition-fails"],
+      "featured": false
+    }
+  ]
+}
