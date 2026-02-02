@@ -16,3 +16,6 @@
 [submodule "template-fullorder"]
 	path = template-fullorder
 	url = https://github.com/tenchan000517/template-fullorder.git
+[submodule "template-authority-minimal"]
+	path = template-authority-minimal
+	url = https://github.com/tenchan000517/template-authority-minimal.git
