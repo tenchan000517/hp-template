@@ -1,0 +1,18 @@
+[submodule "template-standard"]
+	path = template-standard
+	url = https://github.com/tenchan000517/template-standard.git
+[submodule "template-recruit-magazine"]
+	path = template-recruit-magazine
+	url = https://github.com/tenchan000517/template-recruit-magazine.git
+[submodule "template-leadgen-minimal"]
+	path = template-leadgen-minimal
+	url = https://github.com/tenchan000517/template-leadgen-minimal.git
+[submodule "template-leadgen-visual"]
+	path = template-leadgen-visual
+	url = https://github.com/tenchan000517/template-leadgen-visual.git
+[submodule "template-trust-visual"]
+	path = template-trust-visual
+	url = https://github.com/tenchan000517/template-trust-visual.git
+[submodule "template-fullorder"]
+	path = template-fullorder
+	url = https://github.com/tenchan000517/template-fullorder.git
