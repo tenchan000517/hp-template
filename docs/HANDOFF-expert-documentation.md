@@ -1,6 +1,6 @@
 # 専門家意図解説ドキュメント作成 HANDOFF
 
-## ステータス: ✅ 完了
+## ステータス: ⚠️ 残タスクあり
 
 ---
 
@@ -142,9 +142,29 @@
 
 ---
 
+## 残タスク
+
+### template-authority-minimal のサブモジュール化
+
+**現状:**
+- 親リポジトリ https://github.com/tenchan000517/hp-template に6つのテンプレートをサブモジュールとして追加済み
+- template-authority-minimal のみ、通常フォルダとして親リポジトリに含まれたまま
+
+**必要な作業:**
+1. template-authority-minimal をインデックスから削除（`git rm --cached template-authority-minimal`）
+2. サブモジュールとして再追加（`git submodule add https://github.com/tenchan000517/template-authority-minimal.git template-authority-minimal`）
+3. コミット＆プッシュ
+
+**注意:**
+- 作業前に未コミットの変更がないか確認
+- ローカルの変更が失われないよう注意
+
+---
+
 ## 更新履歴
 
 | 日付 | 内容 |
 |------|------|
 | 2026-02-01 | HANDOFF作成 |
 | 2026-02-02 | 全テンプレートのDESIGN_GUIDE.md作成完了、GitHubにプッシュ完了 |
+| 2026-02-02 | hp-templateリポジトリ作成、6テンプレートをサブモジュール化。authority-minimalは残タスク |
