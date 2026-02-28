@@ -4,6 +4,31 @@
 
 **実装ステータス: ✅ 完了（2026年2月1日）**
 **画像生成: ✅ 完了（18枚生成済み）**
+**SEO・機能強化: ✅ 完了（2026年2月1日）**
+**テンプレート公開: ✅ 完了（2026年2月1日）**
+
+---
+
+## GitHubリポジトリ
+
+**URL:** https://github.com/tenchan000517/template-authority-minimal
+
+### 使用方法
+
+```bash
+# 1. テンプレートからリポジトリ作成（GitHub UIで「Use this template」）
+# または直接クローン
+git clone https://github.com/tenchan000517/template-authority-minimal.git my-project
+cd my-project
+
+# 2. 依存関係インストール
+npm install
+
+# 3. 開発サーバー起動
+npm run dev
+
+# 4. data/site.json をカスタマイズ
+```
 
 ---
 
@@ -29,16 +54,11 @@
 
 ## 実装済みテンプレート
 
-テンプレートは以下のパスに配置されています:
-
-```
-/mnt/c/hp-template/template-authority-minimal/
-```
+**GitHub:** https://github.com/tenchan000517/template-authority-minimal
 
 ### 開発サーバー起動
 
 ```bash
-cd /mnt/c/hp-template/template-authority-minimal
 npm install
 npm run dev
 ```
@@ -106,9 +126,13 @@ npm run build
 
 | タスク | ステータス |
 |--------|-----------|
-| ビルド確認 | ✅ 成功（全19ルート生成） |
+| ビルド確認 | ✅ 成功（全21ルート生成） |
 | OGP画像設定 | ✅ 完了 |
 | viewport/metadata設定 | ✅ 完了 |
+| sitemap.xml | ✅ 完了 |
+| robots.txt | ✅ 完了 |
+| JSON-LD構造化データ | ✅ 完了 |
+| API Route | ✅ 完了 |
 
 ---
 
@@ -123,15 +147,19 @@ template-authority-minimal/
 ├── src/
 │   ├── app/
 │   │   ├── globals.css              # グローバルスタイル
-│   │   ├── layout.tsx               # ルートレイアウト
+│   │   ├── layout.tsx               # ルートレイアウト（JSON-LD含む）
 │   │   ├── page.tsx                 # TOP
 │   │   ├── opengraph-image.tsx      # OGP画像
+│   │   ├── sitemap.ts               # サイトマップ自動生成
+│   │   ├── robots.ts                # robots.txt自動生成
 │   │   ├── philosophy/page.tsx      # 理念
 │   │   ├── service/page.tsx         # サービス
 │   │   ├── team/page.tsx            # チーム
 │   │   ├── about/page.tsx           # 会社概要
 │   │   ├── contact/page.tsx         # お問い合わせ
 │   │   ├── privacy/page.tsx         # プライバシー
+│   │   ├── api/
+│   │   │   └── contact/route.ts     # お問い合わせAPI
 │   │   ├── case/
 │   │   │   ├── page.tsx             # 事例一覧
 │   │   │   └── [slug]/page.tsx      # 事例詳細
@@ -139,6 +167,8 @@ template-authority-minimal/
 │   │       ├── page.tsx             # コラム一覧
 │   │       └── [slug]/page.tsx      # コラム詳細
 │   ├── components/
+│   │   ├── animation/
+│   │   │   └── FadeInSection.tsx    # フェードインアニメーション
 │   │   ├── layout/
 │   │   │   ├── MinimalNav.tsx       # ヘッダー
 │   │   │   ├── FooterMinimal.tsx    # フッター
@@ -190,12 +220,13 @@ AI生成画像が配置済み（18枚）:
 - サービス内容
 - 事例・コラムの内容
 
-### 3. フォーム送信の実装
+### 3. フォーム送信の実装 ✅ API実装済み
 
-`/contact` のフォームは現在モック状態。実際のAPI連携が必要:
-- フォーム送信先の設定
-- バリデーションの強化
-- 送信完了メールの設定
+`/api/contact` でサーバーサイドバリデーション実装済み。
+メール送信は運用時に設定が必要:
+- `src/app/api/contact/route.ts` のコメントを参考に
+- Resend または SendGrid を推奨
+- 環境変数 `RESEND_API_KEY` 等を設定
 
 ### 4. 最終確認チェックリスト
 
@@ -258,115 +289,39 @@ AI生成画像が配置済み（18枚）:
 
 ---
 
-## 他テンプレートとの比較（ギャップ分析）
+## 実装済み機能（trust-visual比較で追加）
 
-### 比較対象
-- `template-leadgen-minimal`: リード獲得型ミニマル
-- `template-trust-visual`: 信頼訴求型ビジュアル
+### アニメーション ✅ 実装済み
 
-### 比較結果
+`FadeInSection`コンポーネントを追加（CSS + IntersectionObserver、外部依存なし）
 
-| 項目 | leadgen-minimal | trust-visual | authority-minimal | 状態 |
-|------|-----------------|--------------|-------------------|------|
-| アニメーション | FadeInView (framer-motion) | FadeInSection (CSS) | なし | **要検討** |
-| ScrollIndicator | あり | なし | なし | ギャップ |
-| layout.tsx（各ページ） | あり | あり | なし（page内でmetadata） | 差異 |
-| OGP動的生成 | なし | あり | あり | OK |
-| 外部依存 | framer-motion | なし | なし | OK |
+- ファイル: `src/components/animation/FadeInSection.tsx`
+- 「静謐」なコンセプトに合わせた控えめな設定（duration: 800ms, distance: 20px）
+- 全ページのセクションに適用済み
 
-### 改善提案
+### SEO・機能強化 ✅ 全て実装済み
 
-#### 1. アニメーションコンポーネントの追加（優先度: 中）
+| 項目 | ステータス | 実装ファイル |
+|------|-----------|-------------|
+| JSON-LD構造化データ | ✅ 実装済み | `src/app/layout.tsx` |
+| canonical URL | ✅ 実装済み | `src/app/layout.tsx` |
+| robots meta | ✅ 実装済み | `src/app/layout.tsx` |
+| API Route | ✅ 実装済み | `src/app/api/contact/route.ts` |
+| metadataBase | ✅ 動的設定 | `src/app/layout.tsx` |
+| Twitter Card images | ✅ 実装済み | `src/app/layout.tsx` |
+| sitemap.xml | ✅ 実装済み | `src/app/sitemap.ts` |
+| robots.txt | ✅ 実装済み | `src/app/robots.ts` |
+| サーバーサイドバリデーション | ✅ 実装済み | `src/app/api/contact/route.ts` |
 
-Authority Minimalの「静謐」なコンセプトを保ちつつ、控えめなフェードインアニメーションを追加することで、より洗練された印象に。
+### 残タスク（運用時）
 
-**推奨実装**: `trust-visual`の`FadeInSection`をベースに（依存パッケージなし）
-
-```tsx
-// src/components/animation/FadeInSection.tsx
-// CSS + IntersectionObserverで実装（framer-motion不要）
-```
-
-#### 2. layout.tsxの追加（優先度: 低）
-
-現状、各ページ内で`export const metadata`を定義しており機能的には問題なし。
-一貫性のためにlayout.tsxを追加することも可能だが、必須ではない。
-
-### 判断
-
-- **アニメーション**: デザイン方針による。「静謐」を重視するなら現状維持、「洗練」を加えるなら追加
-- **layout.tsx**: 現状維持でOK（動作に影響なし）
-- **ScrollIndicator**: Authority Minimalには不要（トップページのデザイン方針が異なる）
-
----
-
-## 改善推奨事項（trust-visual比較）
-
-他テンプレート（trust-visual）との比較で特定された改善ポイント。
-
-### 高優先度（SEO・機能強化）
-
-| 項目 | 現状 | 推奨対応 | 参考実装 |
-|------|------|----------|----------|
-| JSON-LD構造化データ | ❌ 未実装 | LocalBusinessスキーマを追加 | `trust-visual/src/app/layout.tsx` |
-| canonical URL | ❌ 未実装 | `metadata.alternates.canonical` を追加 | `trust-visual/src/app/layout.tsx` |
-| robots meta | ❌ 未実装 | `metadata.robots` を追加 | `trust-visual/src/app/layout.tsx` |
-| API Route | ❌ 未実装 | `/api/contact` でサーバーサイド処理 | `trust-visual/src/app/api/contact/route.ts` |
-| metadataBase | ハードコード | `meta.siteUrl` から動的設定 | `trust-visual/src/app/layout.tsx` |
-| Twitter Card images | ❌ 未実装 | `twitter.images` を追加 | `trust-visual/src/app/layout.tsx` |
-
-### 中優先度（品質向上）
-
-| 項目 | 現状 | 推奨対応 |
-|------|------|----------|
-| フォームバリデーション | フロントエンドのみ | サーバーサイドバリデーション追加 |
-| メール送信 | 未実装 | Resend/SendGrid 連携 |
-
-### 実装例: JSON-LD追加
-
-```tsx
-// src/app/layout.tsx に追加
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: meta.siteName,
-  description: meta.description,
-  url: "https://your-domain.com",
-  // ... 会社情報
-};
-
-// <head> 内に追加
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-/>
-```
-
-### 実装例: metadata強化
-
-```tsx
-// metadata を更新
-export const metadata: Metadata = {
-  metadataBase: new URL(meta.siteUrl), // ハードコードから変更
-  // ... 既存設定
-  twitter: {
-    card: "summary_large_image",
-    title: meta.siteName,
-    description: meta.description,
-    images: [meta.ogImage], // 追加
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: meta.siteUrl,
-  },
-};
-```
+| 項目 | 対応内容 |
+|------|----------|
+| メール送信 | `src/app/api/contact/route.ts` のコメントを参考にResend/SendGrid連携 |
+| siteUrl変更 | `data/site.json` の `meta.siteUrl` を実際のドメインに変更 |
 
 ---
 
 *実装完了: 2026年2月1日*
 *画像生成完了: 2026年2月1日*
-*ギャップ分析完了: 2026年2月1日*
+*SEO・機能強化完了: 2026年2月1日*
