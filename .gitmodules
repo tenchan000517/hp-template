@@ -19,3 +19,6 @@
 [submodule "template-authority-minimal"]
 	path = template-authority-minimal
 	url = https://github.com/tenchan000517/template-authority-minimal.git
+[submodule "template-lp"]
+	path = template-lp
+	url = https://github.com/tenchan000517/template-lp.git
