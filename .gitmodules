@@ -22,3 +22,6 @@
 [submodule "template-lp"]
 	path = template-lp
 	url = https://github.com/tenchan000517/template-lp.git
+[submodule "template-lp-reassurance"]
+	path = template-lp-reassurance
+	url = https://github.com/tenchan000517/template-lp-reassurance.git
